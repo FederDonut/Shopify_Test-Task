@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    opacity: 1;
+    /*Font*/
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+ 
+.d-none{
+    display: none;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bodyPosition{
+    width: 1920px;
+    height: 100vh;
+}
+
+header{
+    height: 141px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+     margin-bottom: 43px;
+}
+.shipping-cost{
+    height: 60px;
+    width: 100%;
+    background-color: rgb(95, 95, 95);
+}
+.navigation-wrapper{
+    height: 81px;
+    width: 100%;
+    border: 1px solid rgb(199, 195, 195);
+}   
+.article-content{
+    height: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+    
+
+}
+.gallery-wrapper{
+    height: 480px;
+    width: 521px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.gallery{
+    height: 480px;
+    width: 100px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+.imgs{
+    height: 100px;
+    width: 100px;
+    border-radius: 3px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0% 0%;
+    background-size: cover;
+    background-origin: padding-box;
+    
+}
+.article-img-presentation{
+    height: 480px;
+    width: 480px;
+    border-radius: 5px;
+}
+.mainImg{
+    height: 480px;
+    width: 480px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0% 0%;
+    background-size: cover;
+    background-origin: padding-box;
+}
+.article-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+
+}
+.article-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 275px;
+    width: 475px;
+    
+    text-align: start;
+    padding-left: 28px;
+    border: 1px solid #d5d5d5;
+    border-radius: 5px;
+    box-shadow: 0px 3px 20px #00000029;
+}
+.article-wrapper>h2{
+    color: black;
+    font-weight: 600;
+    font-size: 25px;
+    padding-top: 18px;
+}
+.description{
+    padding-top: 12px;
+    font-size: 18px; 
+}
+.prices{
+    
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.price{
+    text-decoration: line-through;
+    padding-right: 20px;
+}
+.new-price{
+    color: #1F47FF;
+    padding-right: 6px;
+}
+.tax{
+    
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2px;
+}
+.tax>p{
+    font-size: 10px;
+    
+}
+.available-status{
+    padding-top: 18px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.available-icon{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #25A525;   
+}
+.shipping-info{
+    color: #25A525;
+    font-size: 15px;
+}
+.shoppingCard-Btn{
+    height: 52px;
+    margin-right: 23px;
+    margin-top: 37px;
+    border-radius: 3px;
+    background-color: #1F47FF;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+}
+.shoppingCard-Btn:hover{
+    cursor: pointer;
+}
+.switch-Btn-wrapper{
+    position: absolute;
+    top: 669px;
+    left: 732px;
+    height: 23px;
+    width: 58px;
+}
+.switch-Btn{
+    height: 23px;
+    width: 23px;
+    padding: 0;
+    border: none;
+    font-size: 22px;
+   
+}
+.switch-Btn:hover{
+    cursor: pointer;
+    
+}
+/*Shopify Theme */
+.quality-bar{
+    height: 57px;
+    width: 100%;
+    border: 1px solid black;
+    margin-top: 77px;
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    padding-left: 400px;
+}
+.quality-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.quality-icon{
+    height: 57px;
+    width: 57px;
+    background-image: url(./logo/icons8-guarantee-100.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0% 0%;
+    background-size: cover;
+    background-origin: padding-box;
+    margin-right: 15px;
+
+    
+}
+.quality-description{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
