@@ -12,3 +12,11 @@ function getMainImgToHtml(targetImgUrl,targetImgId){
             <div class="mainImg" id="img${targetImgId}" style="background-image: url('${targetImgUrl}');"></div>
     `
 }
+
+function getSwitchButtons(lastImg){
+        return`
+                <button onclick="buttonLeft(${lastImg})" class="switch-Btn" id="btn-left" >&lt;</button>
+                <button onclick="buttonRight(${lastImg})" class="switch-Btn" id="btn-right" >&gt; </button>
+        `
+}
+

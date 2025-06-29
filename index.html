@@ -18,8 +18,22 @@
 <body onload="init()">
     <div class="bodyPosition">
             <header>
-                <section class="shipping-cost"></section>
-                <nav class="navigation-wrapper"></nav>
+                <section class="shipping-cost">
+                    <div class="header-text"><p>HEUTE VERSANDKOSTENFREI</p></div>
+                </section>
+                <section class="navbar">
+                    <div class="shop-icon"></div>
+                     <nav class="navigation-wrapper">
+                        <a href="#">Neon Armband</a>
+                        <a href="#">Größentabelle</a>
+                        <a href="#">Versand</a>
+                        <a href="#">Kontakt</a>
+                     </nav>
+                    <div class="shoppingCard-icon" >
+                        <div class="fullCard d-none" id="fullCard-icon">1</div>
+                    </div>
+                </section>
+               
             </header>
     
         <div class="article-content">
@@ -42,13 +56,17 @@
                         <div class="available-icon"></div>
                         <div class="in-stock"><p class="shipping-info">Auf Lager, in 2-3 Tagen bei dir</p></div>
                     </div>
-                    <button class="shoppingCard-Btn">In den Einkaufswagen</button>
+                    <button class="shoppingCard-Btn" onclick="addArticleToCard()">In den Einkaufswagen</button>
                 </div>
             </section>
         </div>
         <section class="switch-Btn-wrapper">
-            <button class="switch-Btn">&lt;</button>
-            <button class="switch-Btn">&gt;</button>
+            <div class="space"></div>
+            <div class="Btn-container" id="Btn-container">
+
+            </div>
+
+            
         </section>
 
         <section class="quality-bar">

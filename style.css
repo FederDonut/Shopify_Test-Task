@@ -11,43 +11,111 @@
 
  
 .d-none{
-    display: none;
+    display: none !important;
 }
+
 body{
+    
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .bodyPosition{
-    width: 1920px;
+    max-width: 1920px;
+    width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
-    height: 141px;
     width: 100%;
+    height: 141px;
     display: flex;
     flex-direction: column;
-     margin-bottom: 43px;
+    margin-bottom: 43px;
 }
 .shipping-cost{
     height: 60px;
     width: 100%;
     background-color: rgb(95, 95, 95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
-.navigation-wrapper{
+.header-text>p{
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: rgb(95, 95, 95);
+    padding-top: 20px;
+}
+.navbar{
     height: 81px;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     border: 1px solid rgb(199, 195, 195);
-}   
+
+}
+.shop-icon{
+    height: 48px;
+    width: 150px;
+    background-image: url(./logo/logo-neoric_10c0843e-64e6-440c-93d1-9e96932fad90_360x.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0% 0%;
+    background-size: cover;
+    background-origin: padding-box;
+}
+
+
+.navigation-wrapper{
+    width: 600px;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+.navigation-wrapper>a{
+    text-decoration: none;
+    color: black;
+}
+.shoppingCard-icon{
+    height: 25px;
+    width: 25px;
+    background-image: url(./logo/bag.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0% 0%;
+    background-size: cover;
+    background-origin: padding-box;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-start;
+
+} 
+.fullCard{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #1F47FF;
+    color: #FFFFFF;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
 .article-content{
     height: 480px;
     width: 100%;
     display: flex;
     flex-direction: row;
-    
-    
-
 }
 .gallery-wrapper{
     height: 480px;
@@ -175,11 +243,23 @@ header{
     cursor: pointer;
 }
 .switch-Btn-wrapper{
-    position: absolute;
-    top: 669px;
-    left: 732px;
     height: 23px;
-    width: 58px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+}
+.space{
+    height: 23px;
+    width: 521px;
+    
+}
+.Btn-container{
+    padding-left: calc(480px / 2 - 23px);
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
 }
 .switch-Btn{
     height: 23px;
@@ -197,7 +277,7 @@ header{
 .quality-bar{
     height: 57px;
     width: 100%;
-    border: 1px solid black;
+   
     margin-top: 77px;
     display: flex;
     flex-direction: row;
