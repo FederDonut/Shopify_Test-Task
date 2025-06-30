@@ -101,6 +101,7 @@ function renderMainImg(){
 function addArticleToCard(){
     let shoppinCard = document.getElementById('fullCard-icon')
     shoppinCard.classList.toggle('d-none')
+    
 }
 
 
