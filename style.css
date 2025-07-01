@@ -262,8 +262,15 @@ header{
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background-color: #E5E5E5;
+    background-color: #F8F8F8;
 
+}
+.main-circle{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #E5E5E5;
+    box-shadow: inset 0px 3px 6px #00000029;
 }
 .space{
     height: 23px;

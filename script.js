@@ -25,6 +25,7 @@ function renderImggallery(){
     renderMainImg(lastImg)
     renderImgOnLeftImgBtn(lastImg);
     renderImgOnRightImgBtn(lastImg);
+    renderCircleColor(lastImg);
     
 }
 
@@ -56,6 +57,7 @@ function buttonLeft(lastImg){
         renderSwitchBtn(newID);
         renderImgOnLeftImgBtn(newID);
         renderImgOnRightImgBtn(newID);
+        renderCircleColor(newID);
     }else{
         newID = 4
         hideMainImgOnGallery(newID);
@@ -64,6 +66,7 @@ function buttonLeft(lastImg){
         renderSwitchBtn(newID);
         renderImgOnLeftImgBtn(newID);
         renderImgOnRightImgBtn(newID);
+        renderCircleColor(newID);
     }
    
 }
@@ -77,6 +80,7 @@ function buttonRight(lastImg){
         renderSwitchBtn(newID);
         renderImgOnLeftImgBtn(newID);
         renderImgOnRightImgBtn(newID);
+        renderCircleColor(newID);
     }else{
         newID = 0;
         hideMainImgOnGallery(newID);
@@ -85,6 +89,7 @@ function buttonRight(lastImg){
         renderSwitchBtn(newID);
         renderImgOnLeftImgBtn(newID);
         renderImgOnRightImgBtn(newID);
+        renderCircleColor(newID);
     }
    
 }
@@ -128,6 +133,16 @@ function renderImgOnRightImgBtn(lastImg){
     
 }
 
+function renderCircleColor(lastImg){
+    let allCircle = document.getElementsByClassName('circle');
+    for(i = 0; i < allCircle.length; i++){
+        allCircle[i].classList.remove('main-circle');
+    }
+    let mainCircle = document.getElementById('circle'+lastImg);
+    if(mainCircle){
+        mainCircle.classList.add('main-circle');
+    }
+}
 
 function addArticleToCard(){
     let shoppinCard = document.getElementById('fullCard-icon')
