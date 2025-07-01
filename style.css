@@ -85,6 +85,13 @@ header{
     text-decoration: none;
     color: black;
 }
+.right-header-section{
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
 .shoppingCard-icon{
     height: 25px;
     width: 25px;
@@ -110,6 +117,20 @@ header{
     justify-content: center;
     align-items: center;
     font-size: 12px;
+}
+.burger-menu-icon{
+    height: 25px;
+    width: 25px;
+    background-image: url(./logo/134216_menu_lines_hamburger_icon.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0% 0%;
+    background-size: cover;
+    background-origin: padding-box;
+
+}
+.burger-menu-icon:hover{
+    cursor: pointer;
 }
 .article-content{
     height: 480px;
@@ -265,12 +286,12 @@ header{
     background-color: #F8F8F8;
 
 }
-.main-circle{
+.main-circle{ 
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background-color: #E5E5E5;
-    box-shadow: inset 0px 3px 6px #00000029;
+    background-color: #E5E5E5  !important;
+    box-shadow: inset 0px 3px 6px #00000029 !important;
 }
 .space{
     height: 23px;
@@ -330,7 +351,7 @@ header{
     gap: 10px;
 }
 .full-quality{
-    font-weight: 400;
+    font-weight: 600;
 }
 .imgBtn:hover{
     cursor: pointer;
@@ -421,6 +442,7 @@ header{
     .imgBtn{
         width: 20px;
     }
+   
 }
 @media(max-width: 525px){
     .mainImg{

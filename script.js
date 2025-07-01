@@ -1,3 +1,5 @@
+const responsivDesign = window.matchMedia('(max-width: 750px)');
+
 let articleImgArray = [
     "NeoricDunkel_Hell2_1298x.jpeg",
     "neoric_zitrone_dunkel_1298x.jpeg",
@@ -6,12 +8,11 @@ let articleImgArray = [
     "neoric_zitrone_hell_1298x.jpeg", //Hauptbild standartmäßig
 ]
 
-
 function init(){
     renderImggallery();
+    removeDnone();
+    responsivDesign.addEventListener('change',removeDnone)
 }
-
-
 
 function renderImggallery(){
     let gallery = document.getElementById('gallery');
@@ -26,6 +27,7 @@ function renderImggallery(){
     renderImgOnLeftImgBtn(lastImg);
     renderImgOnRightImgBtn(lastImg);
     renderCircleColor(lastImg);
+
     
 }
 
@@ -50,7 +52,6 @@ function showHiddenImgOnGallery(newID,lastImg){
 function buttonLeft(lastImg){
     if(lastImg > 0){
          let newID = lastImg - 1;
-        console.log(newID);
         hideMainImgOnGallery(newID);
         showHiddenImgOnGallery(newID,lastImg);
         renderMainImg(newID);
@@ -107,7 +108,6 @@ function renderImgOnLeftImgBtn(lastImg){
     let leftImgBtn = document.getElementById('leftBtn');
     let leftImgId;
     leftImgBtn.innerHTML ="";
-    console.log('leftBtn');
     if(lastImg > 0){
         leftImgId = lastImg -1;
     }else{
@@ -148,4 +148,13 @@ function addArticleToCard(){
     let shoppinCard = document.getElementById('fullCard-icon')
     shoppinCard.classList.toggle('d-none')
     
+}
+
+function removeDnone(){
+    let burgerMenu = document.getElementById('burgerMenu');
+    if(window.innerWidth <= 750){
+        burgerMenu.classList.remove('d-none');
+    }else{
+        burgerMenu.classList.add('d-none');
+    }
 }
