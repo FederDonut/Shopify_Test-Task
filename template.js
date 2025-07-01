@@ -7,12 +7,12 @@ function getImgtoHtml(i){
     `
 }
 
-function getMainImgToHtml(lastImg){
-        let mainImgUrl = `./img/${articleImgArray[lastImg]}`
+function getMainImgToHtml(currentMainImg){
+        let mainImgUrl = `./img/${articleImgArray[currentMainImg]}`
     return`
-                <div class="imgBtn" id="leftBtn" onclick="buttonLeft(${lastImg})"></div> 
-                <div class="mainImg" id="mainImg${lastImg}" style="background-image: url('${mainImgUrl}');"></div>
-                <div class="imgBtn" id="rightBtn" onclick="buttonRight(${lastImg})"></div> 
+                <div class="imgBtn" id="leftBtn" onclick="buttonLeft(${currentMainImg})"></div> 
+                <div class="mainImg" id="mainImg${currentMainImg}" style="background-image: url('${mainImgUrl}');"></div>
+                <div class="imgBtn" id="rightBtn" onclick="buttonRight(${currentMainImg})"></div> 
         `
 }
 
@@ -23,15 +23,15 @@ function getSwitchButtons(lastImg){
         `
 }
 
-function getResponsivLeftBtn(leftImg){
-        let imgUrl = articleImgArray[leftImg];
+function getResponsivLeftBtn(leftImgId){
+        let imgUrl = articleImgArray[leftImgId];
         return`
-                <div class="responsivBtn" id="${leftImg}" onclick="changeResponsivImgLeft(${leftImg})" style="background-image: url('./img/${imgUrl}');"></div>
+                <div class="responsivBtn" id="${leftImgId}"  style="background-image: url('./img/${imgUrl}');"></div>
         `
 }
-function getResponsivRightBtn(lastImg){
-        let imgUrl = articleImgArray[lastImg]
+function getResponsivRightBtn(rightImgId){
+        let imgUrl = articleImgArray[rightImgId]
         return`
-                <div class="responsivBtn" id="${lastImg}" onclick="changeResponsivImgRight(${lastImg})" style="background-image: url('./img/${imgUrl}');"></div>
+                <div class="responsivBtn" id="${rightImgId}"  style="background-image: url('./img/${imgUrl}');"></div>
         `
 }

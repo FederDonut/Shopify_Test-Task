@@ -22,7 +22,7 @@ function renderImggallery(){
     }
     hideMainImgOnGallery(lastImg);
     renderSwitchBtn(lastImg);
-    renderMainImg2(lastImg)
+    renderMainImg(lastImg)
     renderImgOnLeftImgBtn(lastImg);
     renderImgOnRightImgBtn(lastImg);
     
@@ -52,14 +52,18 @@ function buttonLeft(lastImg){
         console.log(newID);
         hideMainImgOnGallery(newID);
         showHiddenImgOnGallery(newID,lastImg);
-        renderMainImg2(newID);
+        renderMainImg(newID);
         renderSwitchBtn(newID);
+        renderImgOnLeftImgBtn(newID);
+        renderImgOnRightImgBtn(newID);
     }else{
         newID = 4
         hideMainImgOnGallery(newID);
         showHiddenImgOnGallery(newID,lastImg);
-        renderMainImg2(newID);
+        renderMainImg(newID);
         renderSwitchBtn(newID);
+        renderImgOnLeftImgBtn(newID);
+        renderImgOnRightImgBtn(newID);
     }
    
 }
@@ -69,157 +73,64 @@ function buttonRight(lastImg){
         let newID = lastImg + 1
         hideMainImgOnGallery(newID);
         showHiddenImgOnGallery(newID,lastImg);
-        renderMainImg2(newID);
+        renderMainImg(newID);
         renderSwitchBtn(newID);
+        renderImgOnLeftImgBtn(newID);
+        renderImgOnRightImgBtn(newID);
     }else{
         newID = 0;
         hideMainImgOnGallery(newID);
         showHiddenImgOnGallery(newID,lastImg);
-        renderMainImg2(newID);
+        renderMainImg(newID);
         renderSwitchBtn(newID);
+        renderImgOnLeftImgBtn(newID);
+        renderImgOnRightImgBtn(newID);
     }
    
 }
 
-function renderMainImg2(lastImg){
+function renderMainImg(currentMainImg){
     let mainImg = document.getElementById('mainImg');
     mainImg.innerHTML = "";
-    if(articleImgArray[lastImg]){
-            mainImg.innerHTML = getMainImgToHtml(lastImg);
+    if(articleImgArray[currentMainImg]){
+            mainImg.innerHTML = getMainImgToHtml(currentMainImg);
         } 
 }
 
 
 function renderImgOnLeftImgBtn(lastImg){
-    let leftImg = document.getElementById('leftBtn');
-    let leftResponsiveId;
+    let leftImgBtn = document.getElementById('leftBtn');
+    let leftImgId;
+    leftImgBtn.innerHTML ="";
+    console.log('leftBtn');
     if(lastImg > 0){
-        leftResponsiveId = lastImg -1;
+        leftImgId = lastImg -1;
     }else{
-        leftResponsiveId = articleImgArray.length -1;
+        leftImgId = articleImgArray.length -1;
     }
     
-    if(leftResponsiveId){
-        leftImg.innerHTML = getResponsivLeftBtn(leftResponsiveId);    
+    if(leftImgBtn){
+        leftImgBtn.innerHTML = getResponsivLeftBtn(leftImgId);    
     }
 }
 
 function renderImgOnRightImgBtn(lastImg){
-    let rightImg = document.getElementById('rightBtn');
-    let rightResponsiveId;
+    let rightImgBtn = document.getElementById('rightBtn');
+    let rightImgId;
     if(lastImg < articleImgArray.length-1){
-        rightResponsiveId = lastImg +1;
+        rightImgId = lastImg +1;
     }else{
-        rightResponsiveId = 0
+        rightImgId = 0
     }
-    if(rightImg){
-        rightImg.innerHTML = getResponsivRightBtn(rightResponsiveId);
+    if(rightImgBtn){
+        rightImgBtn.innerHTML = getResponsivRightBtn(rightImgId);
     }
     
 }
 
-//function changeResponsivImgLeft(lastImg){
-//    let leftImg = document.getElementById('leftBtn');
-//    console.log(lastImg);
-//    console.log(lastImg-1);
-//    if(lastImg>0){
-//        lastImg= lastImg-1;  
-//        leftImg.innerHTML = getResponsivLeftBtn(lastImg) 
-//    }else{
-//        lastImg=4;
-//        leftImg.innerHTML = getResponsivLeftBtn(lastImg);
-//    }
-//}
-
-//function changeResponsivImgRight(lastImg){
-//    //console.log(lastImg+1);
-//    let rightImg = document.getElementById('rightBtn');
-//    let mainContent = document.getElementById('img'+lastImg);
-//    let leftImg = document.getElementById('leftBtn');
-//    let secImg = document.getElementById('3');
-//    //console.log(secImg.id);
-//    if(lastImg < articleImgArray.length-1){
-//        lastImg = lastImg +1;
-//
-//        //rightImg.innerHTML = getResponsivRightBtn(lastImg);
-//        //console.log(articleImgArray[lastImg]);
-//        //mainContent.style.backgroundImage
-//    }else{
-//        lastImg = 0;
-//        //rightImg.innerHTML = getResponsivRightBtn(lastImg);
-//        console.log(articleImgArray[lastImg]);
-//    }
-//    renderMainImg2(lastImg);
-//    rightImg.innerHTML=getResponsivRightBtn(lastImg);
-//
-//}
 
 function addArticleToCard(){
     let shoppinCard = document.getElementById('fullCard-icon')
     shoppinCard.classList.toggle('d-none')
     
 }
-//
-//function changeResponsivImgRight(currentImgId){ // lastImg in currentImgId umbenannt für Klarheit
-//    let newId;
-//
-//    if(currentImgId < articleImgArray.length - 1){
-//        newId = currentImgId + 1;
-//    } else {
-//        newId = 0; // Springt zum ersten Bild, wenn das Ende erreicht ist
-//    }
-//
-//    // Aktualisiere das Hauptbild mit der neuen ID
-//    renderMainImg2(newId);
-//    let rightImg = document.getElementById('rightBtn');
-//    let leftImg = document.getElementById('leftBtn'); // leftBtn muss auch aktualisiert werden
-//    // Berechne die IDs für die responsiven Buttons basierend auf newId
-//    let rightResponsiveId = (newId < articleImgArray.length - 1) ? (newId + 1) : 0;
-//    let leftResponsiveId = (newId > 0) ? (newId - 1) : (articleImgArray.length - 1);
-//
-//
-//    if (rightImg) { // Sicherheitscheck
-//        rightImg.innerHTML = getResponsivRightBtn(rightResponsiveId);
-//    }
-//    if (leftImg) { // Sicherheitscheck
-//        leftImg.innerHTML = getResponsivLeftBtn(leftResponsiveId);
-//    }
-////
-//    //console.log("Aktuelles Hauptbild:", articleImgArray[newId]);
-//}
-//
-//function changeResponsivImgLeft(currentImgId){
-//    let newId;
-//    
-//    if(currentImgId > 0){
-//        newId = currentImgId -1;
-//    }else{
-//        newId = articleImgArray.length-1;
-//    }
-//    renderMainImg2(newId);
-//    let rightImg = document.getElementById('rightBtn');
-//    let leftImg = document.getElementById('leftBtn');
-//
-//    let rightResponsiveId;
-//    if(newId < articleImgArray.length -1){
-//        rightResponsiveId = newId +1;
-//    }else{
-//        rightResponsiveId = 0;
-//    }
-//    let leftResponsiveId;
-//    if(newId > 0){
-//        leftResponsiveId = newId -1;
-//    }else{
-//        leftResponsiveId = articleImgArray.length -1
-//    }
-//
-//    if (rightImg) {
-//        rightImg.innerHTML = getResponsivRightBtn(rightResponsiveId);
-//    }
-//    if (leftImg) {
-//        leftImg.innerHTML = getResponsivLeftBtn(leftResponsiveId);
-//    }
-//}
-
-
-
